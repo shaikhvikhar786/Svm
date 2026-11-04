@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Explore India - Travel & Tourism</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f8fa;
+        }
+
+        header {
+            background-color: #087e8b;
+            color: white;
+            text-align: center;
+            padding: 25px 15px;
+        }
+
+        header h1 {
+            font-size: 36px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+            background-color: #12343b;
+            padding: 15px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #ffd166;
+        }
+
+        .hero {
+            min-height: 420px;
+
+            background:
+                linear-gradient(
+                    rgba(0, 0, 0, 0.5),
+                    rgba(0, 0, 0, 0.5)
+                ),
+        url("s.jpg");
+
+            background-size: cover;
+            background-position: center;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+            color: white;
+            padding: 30px 20px;
+        }
+
+        .hero-content {
+            max-width: 700px;
+        }
+
+        .hero h2 {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #ff9f1c;
+            color: #222;
+            text-decoration: none;
+
+            border: none;
+            border-radius: 5px;
+
+            padding: 12px 20px;
+            margin-top: 12px;
+
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #ffd166;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1150px;
+            margin: 35px auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 30px;
+            color: #087e8b;
+            margin-bottom: 25px;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+            margin-bottom: 45px;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 12px;
+            overflow: hidden;
+
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-7px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card h3 {
+            color: #087e8b;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            margin-bottom: 10px;
+        }
+
+        .package-card {
+            background-color: white;
+            text-align: center;
+            padding: 25px 20px;
+            border-radius: 12px;
+
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+            transition: transform 0.3s;
+        }
+
+        .package-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .package-card h3 {
+            color: #087e8b;
+            margin-bottom: 10px;
+        }
+
+        .package-card h2 {
+            margin-top: 15px;
+            color: #ff9f1c;
+        }
+
+        .about {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 40px;
+        }
+
+        .about p {
+            text-align: center;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .contact {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .contact form {
+            max-width: 550px;
+            margin: 20px auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contact input,
+        .contact textarea {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-family: inherit;
+            font-size: 15px;
+        }
+
+        .contact textarea {
+            resize: vertical;
+        }
+
+        .contact form .btn {
+            align-self: center;
+        }
+
+        footer {
+            background-color: #12343b;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        @media (min-width: 600px) {
+            .card-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .hero h2 {
+                font-size: 36px;
+            }
+        }
+
+        @media (min-width: 900px) {
+            .card-grid {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+        }
+
+        /* About Us Video */
+
+.about {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    margin-bottom: 40px;
+}
+
+.about p {
+    text-align: center;
+    max-width: 800px;
+    margin: auto;
+}
+
+.about-video {
+    max-width: 750px;
+    margin: 30px auto 0;
+}
+
+.about-video video {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px #ccc;
+}
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Explore India ✈️</h1>
+        <p>Discover Beautiful Places Around the World</p>
+    </header>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#destinations">Destinations</a>
+        <a href="#packages">Packages</a>
+        <a href="#about">About Us</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h2>Explore The World With Us</h2>
+
+            <p>
+                Discover amazing destinations,
+                beautiful landscapes and unforgettable journeys.
+            </p>
+
+            <a href="#destinations" class="btn">
+                Explore Destinations
+            </a>
+        </div>
+    </section>
+
+    <main class="container">
+
+        <section id="destinations">
+
+            <h2 class="section-title">Popular Destinations</h2>
+
+            <div class="card-grid">
+
+                <article class="card">
+
+                    <img
+                        src="tajmahal.jpg"
+                        alt="Taj Mahal in Agra">
+
+                    <div class="card-content">
+                        <h3>Agra, India</h3>
+
+                        <p>
+                            Visit the beautiful Taj Mahal,
+                            one of India's most famous landmarks.
+                        </p>
+
+                        <a href="#contact" class="btn">Explore More</a>
+                    </div>
+
+                </article>
+
+                <article class="card">
+
+                    <img
+                        src="goa.jpg"
+                        alt="Beautiful tropical beach">
+
+                    <div class="card-content">
+                        <h3>Goa, India</h3>
+
+                        <p>
+                            Enjoy beautiful beaches,
+                            coastal views and relaxing holidays.
+                        </p>
+
+                        <a href="#contact" class="btn">Explore More</a>
+                    </div>
+
+                </article>
+
+                <article class="card">
+
+                    <img
+                        src="manali.jpg"
+                        alt="Mountains in Manali">
+
+                    <div class="card-content">
+                        <h3>Manali, India</h3>
+
+                        <p>
+                            Experience mountain scenery,
+                            fresh air and beautiful valleys.
+                        </p>
+
+                        <a href="#contact" class="btn">Explore More</a>
+                    </div>
+                    
+
+            </div>
+
+        </section>
+
+        <section id="packages">
+
+            <h2 class="section-title">Our Tour Packages</h2>
+
+            <div class="card-grid">
+
+                <article class="package-card">
+                    <h3>Weekend Trip</h3>
+                    <p>Perfect for a short holiday.</p>
+                    <h2>2 Days</h2>
+                    <a href="#contact" class="btn">Book Now</a>
+                </article>
+
+                <article class="package-card">
+                    <h3>Family Vacation</h3>
+                    <p>Enjoy a memorable family trip.</p>
+                    <h2>5 Days</h2>
+                    <a href="#contact" class="btn">Book Now</a>
+                </article>
+
+                <article class="package-card">
+                    <h3>Adventure Tour</h3>
+                    <p>Discover nature and adventure.</p>
+                    <h2>7 Days</h2>
+                    <a href="#contact" class="btn">Book Now</a>
+                </article>
+
+            </div>
+             <section id="about" class="about">
+
+    <h2 class="section-title">About Us</h2>
+
+    <p>
+        Welcome to Explore India!
+
+        We help travellers discover beautiful
+        destinations, amazing landscapes and
+        unforgettable travel experiences.
+
+        Explore the world and make beautiful memories
+        with us.
+    </p>
+
+    <div class="about-video">
+
+        <video controls poster="prv.jpg">
+            <video controls width="100%">
+
+
+            <source src="download.mp4"
+                    type="video/mp4">
+
+
+        </video>
+
+    </div>
+
+</section>
+
+        
+        <section id="contact" class="contact">
+
+    <h2 class="section-title">Contact Us</h2>
+
+    <p>Plan Your Dream Holiday With Us!</p>
+
+    <form id="bookingForm">
+
+        <input
+            type="text"
+            id="name"
+            placeholder="Enter Your Name"
+            required>
+
+        <input
+            type="email"
+            id="email"
+            placeholder="Enter Your Email"
+            required>
+
+        <input
+            type="text"
+            id="destination"
+            placeholder="Enter Destination"
+            required>
+
+        <input
+            type="date"
+            id="travelDate"
+            required>
+
+        <textarea
+            id="message"
+            placeholder="Your Message"
+            rows="5"></textarea>
+
+        <button type="submit" class="btn">
+            Submit Booking
+        </button>
+
+    </form>
+
+</section>
+                </button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>
+            &copy; 2026 Explore India |
+            Travel & Tourism Website
+            <div>
+            Email:shaikhvikhar166@gmail.come
+            </div>
+            <DIV>CONTACT NO: 9529864691
+                <DIV>
+        </p>
+    </footer>
+    <script>
+
+    // Booking buttons
+
+    const bookingButtons =
+        document.querySelectorAll(".book-btn");
+
+    bookingButtons.forEach(function(button) {
+
+        button.addEventListener("click", function() {
+
+            const selectedPackage =
+                button.getAttribute("data-package");
+
+            document.getElementById("destination").value =
+                selectedPackage;
+
+        });
+
+    });
+
+
+    // WhatsApp booking
+
+    document.getElementById("bookingForm")
+    .addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+        const name =
+            document.getElementById("name").value;
+
+        const email =
+            document.getElementById("email").value;
+
+        const destination =
+            document.getElementById("destination").value;
+
+        const date =
+            document.getElementById("travelDate").value;
+
+        const message =
+            document.getElementById("message").value;
+
+        const phoneNumber = "919529864691";
+
+        const whatsappMessage =
+            "Hello Explore India!%0A%0A" +
+            "I want to book a tour.%0A%0A" +
+            "Name: " + encodeURIComponent(name) + "%0A" +
+            "Email: " + encodeURIComponent(email) + "%0A" +
+            "Destination: " + encodeURIComponent(destination) + "%0A" +
+            "Travel Date: " + encodeURIComponent(date) + "%0A" +
+            "Message: " + encodeURIComponent(message);
+
+        const whatsappURL =
+            "https://wa.me/919529864691" + phoneNumber +
+            "?text=" + whatsappMessage;
+
+        window.open(whatsappURL, "_blank");
+
+    });
+
+</script>
+</body>
+
+</html>
